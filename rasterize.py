@@ -29,7 +29,7 @@ def mydrawPNG(vector_image, Side = 256):
 
 
 def preprocess(sketch_points, side = 256.0):
-    sketch_points = sketch_points.astype(np.float)
+    sketch_points = sketch_points.astype(np.float64) # 32?
     sketch_points[:, :2] = sketch_points[:, :2] / np.array([800, 800])
     sketch_points[:,:2] = sketch_points[:,:2] * side
     sketch_points = np.round(sketch_points)
