@@ -23,6 +23,8 @@ conda activate sketch2vec
 
 # 2.  Core libraries
 pip install torch torchvision torchaudio
+pip install --upgrade torch torchvision torchaudio \
+    --extra-index-url https://download.pytorch.org/whl/cu118
 # 3.  Repo dependencies
 pip install lmdb pillow matplotlib tqdm numpy gdown bresenham scipy
 # 4.  (Optional) Jupyter & tensorboard

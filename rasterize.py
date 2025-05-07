@@ -33,6 +33,8 @@ def preprocess(sketch_points, side = 256.0):
     sketch_points[:, :2] = sketch_points[:, :2] / np.array([800, 800])
     sketch_points[:,:2] = sketch_points[:,:2] * side
     sketch_points = np.round(sketch_points)
+    # new line: replace any NaN or ±inf with 0
+    # sketch_points = np.nan_to_num(sketch_points, nan=0.0, posinf=0.0, neginf=0.0)
     return sketch_points
 
 def rasterize_Sketch(sketch_points):

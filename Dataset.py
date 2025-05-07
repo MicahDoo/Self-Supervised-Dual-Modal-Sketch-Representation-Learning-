@@ -232,10 +232,10 @@ def get_dataloader(hp):
         dataset_Test = Dataset_Quickdraw(hp, mode='Test')
 
     dataloader_Train = data.DataLoader(dataset_Train, batch_size=hp.batchsize, shuffle=True,
-                                         num_workers=int(hp.nThreads), collate_fn=collate_self)
+                                         num_workers=0*int(hp.nThreads), collate_fn=collate_self)
 
     dataloader_Test = data.DataLoader(dataset_Test, batch_size=hp.batchsize, shuffle=False,
-                                         num_workers=int(hp.nThreads), collate_fn=collate_self)
+                                         num_workers=0*int(hp.nThreads), collate_fn=collate_self)
 
     return dataloader_Train, dataloader_Test
 
